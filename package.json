@@ -1,7 +1,7 @@
 {
-  "name": "hoodie-plugin-template",
+  "name": "hoodie-plugin-elasticsearch",
   "version": "1.0.0",
-  "description": "Basic Hoodie plugin layout",
+  "description": "Basic Hoodie Elasticsearch plugin",
   "main": "worker.js",
   "devDependencies": {
     "chai": "~1.9.0",

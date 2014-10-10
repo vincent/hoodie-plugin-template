@@ -8,11 +8,12 @@
 Hoodie.extend(function (hoodie) {
   'use strict';
 
+  var elasticsearch = require('elasticsearch');
+
   // extend the hoodie.js API
-  hoodie.hello = function (name) {
-    return hoodie.task.start('hello', {
-      name: name
-    });
-  };
+  hoodie.elasticsearch = new elasticsearch.Client({
+    host: 'localhost:9200',
+    log: 'trace'
+  });
 
 });

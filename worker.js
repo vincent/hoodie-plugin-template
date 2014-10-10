@@ -3,12 +3,13 @@
  * An example plugin worker, this is where you put your backend code (if any)
  */
 
+var elasticsearch = require('elasticsearch');
+
 module.exports = function (hoodie, callback) {
 
-  // setup task handlers
-  hoodie.task.on('hello:add', function (db, task) {
-    task.msg = 'Hello, ' + task.name;
-    hoodie.task.success(db, task);
+  var client = new elasticsearch.Client({
+    host: 'localhost:9200',
+    log: 'trace'
   });
 
   // plugin initialization complete
